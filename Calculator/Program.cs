@@ -2,12 +2,14 @@
 // Followed to get used to C# syntax, and other various fundamentals.
 using System;
 
+
 namespace Calculator
 {
     class Program
     {
         static void Main(string[] args)
         {
+            int count = 0;
             bool endApp = false;
             Console.WriteLine("Console Calculator in C#\r");
             Console.WriteLine("------------------------\n");
@@ -27,7 +29,7 @@ namespace Calculator
                     Console.Write("This is not a valid input. Please enter an integer value: ");
                     numInput1 = Console.ReadLine();
                 }
-                Console.Write("Type another number, and then press Enter");
+                Console.Write("Type another number, and then press Enter: ");
                 numInput2 = Console.ReadLine();
 
                 double cleanNum2 = 0;
@@ -60,9 +62,16 @@ namespace Calculator
                     Console.WriteLine("Oh no! An exception occured trying to do the math.\n - Details: " + e.Message);
                 }
                 Console.WriteLine("------------------------\n");
-
+                
                 Console.Write("Press 'n' and Enter to close the app, or press any other key and Enter to continue: ");
                 if (Console.ReadLine() == "n") endApp = true;
+                //Attempting to add a count functionality to tutorial code.
+                while (endApp != true)
+                    {
+                    count++;
+                    Console.WriteLine("This calculator has been used " + count + " times since starting");
+                    break;
+                    }
 
                 Console.WriteLine("\n");
             }
@@ -98,6 +107,10 @@ namespace Calculator
             return result;
         }
     }
+
+        
+        
+    
 }
 
 
